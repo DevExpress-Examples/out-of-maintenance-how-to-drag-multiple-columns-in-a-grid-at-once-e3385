@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSet1" msprop:Generator_DataSetName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CustomerInfo" msprop:Generator_UserTableName="CustomerInfo" msprop:Generator_RowDeletedName="CustomerInfoRowDeleted" msprop:Generator_RowChangedName="CustomerInfoRowChanged" msprop:Generator_RowClassName="CustomerInfoRow" msprop:Generator_RowChangingName="CustomerInfoRowChanging" msprop:Generator_RowEvArgName="CustomerInfoRowChangeEvent" msprop:Generator_RowEvHandlerName="CustomerInfoRowChangeEventHandler" msprop:Generator_TableClassName="CustomerInfoDataTable" msprop:Generator_TableVarName="tableCustomerInfo" msprop:Generator_RowDeletingName="CustomerInfoRowDeleting" msprop:Generator_TablePropName="CustomerInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CustomerID" msprop:Generator_UserColumnName="CustomerID" msprop:Generator_ColumnPropNameInRow="CustomerID" msprop:Generator_ColumnVarNameInTable="columnCustomerID" msprop:Generator_ColumnPropNameInTable="CustomerIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="FirstName" msprop:Generator_UserColumnName="FirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="LastName" msprop:Generator_UserColumnName="LastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Image" msdata:DataType="System.Drawing.Image, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" msprop:Generator_UserColumnName="Image" msprop:Generator_ColumnVarNameInTable="columnImage" msprop:Generator_ColumnPropNameInRow="Image" msprop:Generator_ColumnPropNameInTable="ImageColumn" type="xs:anyType" minOccurs="0" />
+              <xs:element name="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Check" msprop:Generator_UserColumnName="Check" msprop:Generator_ColumnPropNameInRow="Check" msprop:Generator_ColumnVarNameInTable="columnCheck" msprop:Generator_ColumnPropNameInTable="CheckColumn" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Detail" msprop:Generator_UserTableName="Detail" msprop:Generator_RowDeletedName="DetailRowDeleted" msprop:Generator_RowChangedName="DetailRowChanged" msprop:Generator_RowClassName="DetailRow" msprop:Generator_RowChangingName="DetailRowChanging" msprop:Generator_RowEvArgName="DetailRowChangeEvent" msprop:Generator_RowEvHandlerName="DetailRowChangeEventHandler" msprop:Generator_TableClassName="DetailDataTable" msprop:Generator_TableVarName="tableDetail" msprop:Generator_RowDeletingName="DetailRowDeleting" msprop:Generator_TablePropName="Detail">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CustomerID" msprop:Generator_UserColumnName="CustomerID" msprop:Generator_ColumnPropNameInRow="CustomerID" msprop:Generator_ColumnVarNameInTable="columnCustomerID" msprop:Generator_ColumnPropNameInTable="CustomerIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="FirstName" msprop:Generator_UserColumnName="FirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="MasterID" msprop:Generator_UserColumnName="MasterID" msprop:Generator_ColumnPropNameInRow="MasterID" msprop:Generator_ColumnVarNameInTable="columnMasterID" msprop:Generator_ColumnPropNameInTable="MasterIDColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="CustomerInfo_CustomerInfo1" msdata:parent="CustomerInfo" msdata:child="Detail" msdata:parentkey="CustomerID" msdata:childkey="CustomerID" msprop:Generator_UserRelationName="CustomerInfo_CustomerInfo1" msprop:Generator_RelationVarName="relationCustomerInfo_CustomerInfo1" msprop:Generator_UserChildTable="Detail" msprop:Generator_UserParentTable="CustomerInfo" msprop:Generator_ParentPropName="CustomerInfoRow" msprop:Generator_ChildPropName="GetDetailRows" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
