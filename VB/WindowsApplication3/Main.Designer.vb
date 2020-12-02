@@ -1,4 +1,11 @@
-﻿' Developer Express Code Central Example:
+﻿'====================================================================================================
+'The Free Edition of Instant VB limits conversion output to 100 lines per file.
+
+'To purchase the Premium Edition, visit our website:
+'https://www.tangiblesoftwaresolutions.com/order/order-instant-vb.html
+'====================================================================================================
+
+' Developer Express Code Central Example:
 ' How to drag multiple columns in a grid at once
 ' 
 ' This example illustrates how to move or hide some columns in a grid at once. For
@@ -9,9 +16,6 @@
 ' You can find sample updates and versions for different programming languages here:
 ' http://www.devexpress.com/example=E3385
 
-
-Imports Microsoft.VisualBasic
-Imports System
 Namespace DXSample
 	Partial Public Class Main
 		''' <summary>
@@ -38,7 +42,8 @@ Namespace DXSample
 		''' </summary>
 		Private Sub InitializeComponent()
 			Me.components = New System.ComponentModel.Container()
-			Dim resources As New System.ComponentModel.ComponentResourceManager(GetType(Main))
+'INSTANT VB NOTE: The variable resources was renamed since it may cause conflicts with calls to static members of the user-defined type with this name:
+			Dim resources_Conflict As New System.ComponentModel.ComponentResourceManager(GetType(Main))
 			Me.customerInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
 			Me.dataSet11 = New DXSample.DataSet1()
 			Me.imageList1 = New System.Windows.Forms.ImageList(Me.components)
@@ -71,7 +76,7 @@ Namespace DXSample
 			' 
 			' imageList1
 			' 
-			Me.imageList1.ImageStream = (CType(resources.GetObject("imageList1.ImageStream"), System.Windows.Forms.ImageListStreamer))
+			Me.imageList1.ImageStream = (CType(resources_Conflict.GetObject("imageList1.ImageStream"), System.Windows.Forms.ImageListStreamer))
 			Me.imageList1.TransparentColor = System.Drawing.Color.Transparent
 			Me.imageList1.Images.SetKeyName(0, "1.jpg")
 			Me.imageList1.Images.SetKeyName(1, "2.jpg")
@@ -158,7 +163,8 @@ Namespace DXSample
 			Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 			Me.Name = "Main"
 			Me.Text = "Form1"
-'			Me.Load += New System.EventHandler(Me.Form1_Load);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.Load += new System.EventHandler(this.Form1_Load);
 			CType(Me.customerInfoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.dataSet11, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.gridControl1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -168,7 +174,7 @@ Namespace DXSample
 
 		End Sub
 
-		#End Region
+#End Region
 
 
 		Private customerInfoBindingSource As System.Windows.Forms.BindingSource

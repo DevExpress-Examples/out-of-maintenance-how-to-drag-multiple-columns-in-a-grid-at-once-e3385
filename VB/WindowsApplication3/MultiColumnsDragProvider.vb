@@ -1,4 +1,11 @@
-﻿' Developer Express Code Central Example:
+﻿'====================================================================================================
+'The Free Edition of Instant VB limits conversion output to 100 lines per file.
+
+'To purchase the Premium Edition, visit our website:
+'https://www.tangiblesoftwaresolutions.com/order/order-instant-vb.html
+'====================================================================================================
+
+' Developer Express Code Central Example:
 ' How to drag multiple columns in a grid at once
 ' 
 ' This example illustrates how to move or hide some columns in a grid at once. For
@@ -9,8 +16,6 @@
 ' You can find sample updates and versions for different programming languages here:
 ' http://www.devexpress.com/example=E3385
 
-
-Imports Microsoft.VisualBasic
 Imports System
 Imports System.Collections.Generic
 Imports System.Windows.Forms
@@ -61,7 +66,7 @@ Namespace DXSample
 		End Sub
 
 		Private Sub OnGridControlPaint(ByVal sender As Object, ByVal e As PaintEventArgs)
-			If (Not dragRectangle.IsEmpty) Then
+			If Not dragRectangle.IsEmpty Then
 				Using br As New SolidBrush(Color.FromArgb(170, DevExpress.LookAndFeel.LookAndFeelHelper.GetSystemColor(DevExpress.LookAndFeel.UserLookAndFeel.Default.ActiveLookAndFeel, SystemColors.Control)))
 				e.Graphics.FillRectangle(br, dragRectangle)
 				End Using
@@ -88,7 +93,7 @@ Namespace DXSample
 		End Sub
 
 		Private Sub UpdateDragRectangle(ByVal isEmpty As Boolean)
-			If (Not isEmpty) Then
+			If Not isEmpty Then
 				dragRectangle = New Rectangle(Math.Min(startPoint.X, endPoint.X), Math.Min(startPoint.Y, endPoint.Y), Math.Abs(endPoint.X - startPoint.X), Math.Abs(endPoint.Y - startPoint.Y))
 			Else
 				dragRectangle = Rectangle.Empty
@@ -98,12 +103,12 @@ Namespace DXSample
 
 
 		Private Function CanDrag(ByVal dragObject As GridColumn, ByVal valid As Boolean) As Boolean
-			Return dragObject IsNot Nothing AndAlso valid AndAlso (Not dragRectangle.IsEmpty) AndAlso dragColumns.Count > 1
+			Return dragObject IsNot Nothing AndAlso valid AndAlso Not dragRectangle.IsEmpty AndAlso dragColumns.Count > 1
 		End Function
 
 		Private Sub OnDragObjectStart(ByVal sender As Object, ByVal e As DevExpress.XtraGrid.Views.Base.DragObjectStartEventArgs)
 			Dim column As GridColumn = TryCast(e.DragObject, GridColumn)
-			If (Not CanDrag(column, e.Allow)) Then
+			If Not CanDrag(column, e.Allow) Then
 				Return
 			End If
 			visibleIndex = column.VisibleIndex
@@ -111,7 +116,7 @@ Namespace DXSample
 
 		Private Sub OnViewDragObjectOver(ByVal sender As Object, ByVal e As DevExpress.XtraGrid.Views.Base.DragObjectOverEventArgs)
 			Dim column As GridColumn = TryCast(e.DragObject, GridColumn)
-			If (Not CanDrag(column, e.DropInfo.Valid)) Then
+			If Not CanDrag(column, e.DropInfo.Valid) Then
 				Return
 			End If
 			Dim firstColumn As GridColumn = dragColumns(0)
@@ -155,15 +160,15 @@ Namespace DXSample
 		End Sub
 
 		Private Sub MoveDragColumns(ByVal delta As Integer, ByVal dragColumn As GridColumn)
-			   view.BeginUpdate()
-			   For Each column As GridColumn In dragColumns
-				   If dragColumn IsNot column Then
-					   Dim visibleIndex As Integer = column.VisibleIndex
-					   column.VisibleIndex = -1
-					   column.VisibleIndex = visibleIndex + delta
-				   End If
-			   Next column
-			   view.EndUpdate()
+			view.BeginUpdate()
+			For Each column As GridColumn In dragColumns
+				If dragColumn IsNot column Then
+					Dim visibleIndex As Integer = column.VisibleIndex
+					column.VisibleIndex = -1
+					column.VisibleIndex = visibleIndex + delta
+				End If
+			Next column
+			view.EndUpdate()
 		End Sub
 
 		Private Sub HideDragColumns()

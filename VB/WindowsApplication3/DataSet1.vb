@@ -9,9 +9,6 @@
 ' You can find sample updates and versions for different programming languages here:
 ' http://www.devexpress.com/example=E3385
 
-
-Imports Microsoft.VisualBasic
-Imports System
 Namespace DXSample
 
 
