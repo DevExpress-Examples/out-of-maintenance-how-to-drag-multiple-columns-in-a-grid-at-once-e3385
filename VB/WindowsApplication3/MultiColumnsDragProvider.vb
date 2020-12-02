@@ -1,11 +1,4 @@
-﻿'====================================================================================================
-'The Free Edition of Instant VB limits conversion output to 100 lines per file.
-
-'To purchase the Premium Edition, visit our website:
-'https://www.tangiblesoftwaresolutions.com/order/order-instant-vb.html
-'====================================================================================================
-
-' Developer Express Code Central Example:
+﻿' Developer Express Code Central Example:
 ' How to drag multiple columns in a grid at once
 ' 
 ' This example illustrates how to move or hide some columns in a grid at once. For
@@ -128,7 +121,7 @@ Namespace DXSample
 
 		Private Sub OnDragObjectDrop(ByVal sender As Object, ByVal e As DevExpress.XtraGrid.Views.Base.DragObjectDropEventArgs)
 			Dim column As GridColumn = TryCast(e.DragObject, GridColumn)
-			If (Not CanDrag(column, e.DropInfo.Valid)) Then
+			If Not CanDrag(column, e.DropInfo.Valid) Then
 				Return
 			End If
 			If e.DropInfo.Index < 0 Then
@@ -160,15 +153,15 @@ Namespace DXSample
 		End Sub
 
 		Private Sub MoveDragColumns(ByVal delta As Integer, ByVal dragColumn As GridColumn)
-			view.BeginUpdate()
-			For Each column As GridColumn In dragColumns
-				If dragColumn IsNot column Then
-					Dim visibleIndex As Integer = column.VisibleIndex
-					column.VisibleIndex = -1
-					column.VisibleIndex = visibleIndex + delta
-				End If
-			Next column
-			view.EndUpdate()
+			   view.BeginUpdate()
+			   For Each column As GridColumn In dragColumns
+				   If dragColumn <> column Then
+					   Dim visibleIndex As Integer = column.VisibleIndex
+					   column.VisibleIndex = -1
+					   column.VisibleIndex = visibleIndex + delta
+				   End If
+			   Next column
+			   view.EndUpdate()
 		End Sub
 
 		Private Sub HideDragColumns()

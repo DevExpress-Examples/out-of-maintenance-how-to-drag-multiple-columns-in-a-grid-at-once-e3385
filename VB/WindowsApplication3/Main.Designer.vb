@@ -1,11 +1,4 @@
-﻿'====================================================================================================
-'The Free Edition of Instant VB limits conversion output to 100 lines per file.
-
-'To purchase the Premium Edition, visit our website:
-'https://www.tangiblesoftwaresolutions.com/order/order-instant-vb.html
-'====================================================================================================
-
-' Developer Express Code Central Example:
+﻿' Developer Express Code Central Example:
 ' How to drag multiple columns in a grid at once
 ' 
 ' This example illustrates how to move or hide some columns in a grid at once. For
@@ -174,7 +167,7 @@ Namespace DXSample
 
 		End Sub
 
-#End Region
+		#End Region
 
 
 		Private customerInfoBindingSource As System.Windows.Forms.BindingSource

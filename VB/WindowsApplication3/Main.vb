@@ -9,8 +9,6 @@
 ' You can find sample updates and versions for different programming languages here:
 ' http://www.devexpress.com/example=E3385
 
-
-Imports Microsoft.VisualBasic
 Imports System
 Imports System.Collections.Generic
 Imports System.ComponentModel
@@ -24,17 +22,18 @@ Imports DevExpress.XtraEditors
 Namespace DXSample
 	Partial Public Class Main
 		Inherits XtraForm
+
 		Public Sub New()
 			InitializeComponent()
 		End Sub
 		Public Sub InitData()
 			For i As Integer = 0 To 4
-				'dataSet11.Tables(0).Rows.Add(New Object() { i, String.Format("FirstName {0}", i), i, imageList1.Images(i), DateTime.Today.AddDays(i), True })
-				'dataSet11.Tables(1).Rows.Add(New Object() { i, i, i })
+				dataSet11.Tables(0).Rows.Add(New Object() { i, String.Format("FirstName {0}", i), i, imageList1.Images(i), DateTime.Today.AddDays(i), True })
+				dataSet11.Tables(1).Rows.Add(New Object() { i, i, i })
 			Next i
 		End Sub
 		Private provider As MulticolumnDragProvider
-		Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+		Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
 			InitData()
 			provider = New MulticolumnDragProvider(gridView1)
 			provider.EnableMultiColumnDragging()
